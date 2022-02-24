@@ -33,21 +33,30 @@
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="card shadow-lg border-0 mx-auto" style="width: 19rem;">
+                        <div class="bg-success py-5">
+                            <p class="text-center">
+                                <a href="#" class="btn btn-light shadow-none" id="waurl">Send Message</a>
+                            </p>
+                        </div>
                         <div class="card-body">
-                            <form>
+                            <form action="">
+                                <!-- <form action="javascript:waNo();" method="post" id="waurl"></form> -->
                                 <div class="mb-3">
                                     <label class="form-label">WhatsApp number</label>
                                     <input type="tel" class="form-control shadow-none" placeholder="eg : 919474460058"
-                                        id="wano" onchange="waNo()" required>
+                                        id="wano" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Your message</label>
-                                    <textarea class="form-control shadow-none" rows="3"
-                                        placeholder="Type your message here ..." id="wamsg"></textarea>
+                                    <textarea class="form-control shadow-none" rows="3" id="wamsg"
+                                        placeholder="Type your message here ..." onchange="waNo()" required></textarea>
                                 </div>
-                                <div class="d-grid gap-2">
-                                    <a href="#" class="btn btn-success shadow-none" id="waurl">Send</a>
-                                </div>
+                                <!-- <div class="d-grid gap-2"> -->
+                                <!-- <a href="#" class="btn btn-success shadow-none" id="waurl">Send</a> -->
+                                <button type="reset" class="btn btn-success shadow-none">Reset</button>
+                                <!-- <button type="submit" class="btn btn-success shadow-none"
+                                    onclick="waNo">Continue</button> -->
+                                <!-- </div> -->
                                 <p id="p1"></p>
                                 <!-- <p id="p2"></p>
                                 <p id="p3"></p> -->
@@ -74,12 +83,11 @@
             var varwano = document.getElementById("wano").value;
             var varwamsg = document.getElementById("wamsg").value;
             var newmsg = str1 + varwano + str2 + varwamsg;
+            // var newlink = document.getElementById("waurl");
+            // newlink.href = newmsg;
             // document.getElementById("p1").innerHTML = newmsg;
-
-
-
-            var newlink = document.getElementById("waurl");
-            newlink.href = newmsg;
+            // document.getElementById("form_id").action = newlink;
+            document.getElementById("waurl").href = newmsg;
         }
     </script>
 </body>
